@@ -29,6 +29,10 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
+        <img src="images/golf_course1.jpg"/>
+        <img src="images/golf_course2.jpg"/>
+        <img src="images/golf_course3.jpg"/>
+        <img src="images/golf_course4.jpg"/>
       </div>
     );
 }
