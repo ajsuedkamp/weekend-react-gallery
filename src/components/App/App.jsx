@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
-  const [galleryItems, setGalleryItems] = useState('')
+  const [galleryItems, setGalleryItems] = useState([]);
 
   useEffect(() => {
     console.log('useEffect page-load');
@@ -28,13 +28,20 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
-        <img src="images/golf_course1.jpg"/>
-        <img src="images/golf_course2.jpg"/>
-        <img src="images/golf_course3.jpg"/>
-        <img src="images/golf_course4.jpg"/>
+        <ul>
+          {
+            galleryItems.map(item => {
+              return <li key={item.id}>
+                <img src={item.path}></img>
+                {item.description}
+                {item.likes}
+              </li>
+            })
+          }
+        </ul>
       </div>
     );
 }
+
 
 export default App;
