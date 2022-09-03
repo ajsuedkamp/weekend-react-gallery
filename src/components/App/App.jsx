@@ -31,25 +31,24 @@ function App() {
       alert('Something went wrong!')
     });
   }
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        <Container maxWidth="sm">
-          <p>Gallery goes here</p>
-          <Grid container spacing={2}>
-            {
-              galleryItems.map(picture => {
-                return <GalleryList
-                        key={picture.id} 
-                        picture={picture}
-                        />
-              })
-            }
-          </Grid>
-        </Container>
-      </div>
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Gallery of My Life</h1>
+          </header>
+          <Container maxWidth="sm">
+            <Grid container spacing={2}>
+              {
+                galleryItems.map(picture => {
+                  return <GalleryList
+                          key={picture.id} 
+                          picture={picture}
+                          />
+                })
+              }
+            </Grid>
+          </Container>
+        </div>
     );
 }
 
