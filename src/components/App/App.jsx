@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
+import GalleryItems from '../GalleryItems/GalleryItems.jsx';
 
 function App() {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -31,11 +32,10 @@ function App() {
         <ul>
           {
             galleryItems.map(item => {
-              return <li key={item.id}>
-                <img src={item.path}></img>
-                {item.description}
-                {item.likes}
-              </li>
+              return <GalleryItems
+                      key={item.id} 
+                      item={item}
+                      />
             })
           }
         </ul>
