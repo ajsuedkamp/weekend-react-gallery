@@ -2,6 +2,14 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryItem from '../GalleryItem/GalleryItem.jsx';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function App() {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -28,17 +36,19 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <ul>
-          {
-            galleryItems.map(item => {
-              return <GalleryList
-                      key={item.id} 
-                      item={item}
-                      />
-            })
-          }
-        </ul>
+        <Container maxWidth="sm">
+          <p>Gallery goes here</p>
+          <Grid container spacing={2}>
+            {
+              galleryItems.map(picture => {
+                return <GalleryList
+                        key={picture.id} 
+                        picture={picture}
+                        />
+              })
+            }
+          </Grid>
+        </Container>
       </div>
     );
 }
