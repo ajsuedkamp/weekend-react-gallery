@@ -1,5 +1,5 @@
 
-function GalleryItems({item}) {
+function GalleryList({item}) {
     return <li>
     <img src={item.path}></img>
     {item.description}
@@ -7,4 +7,4 @@ function GalleryItems({item}) {
   </li>
 }
 
-export default GalleryItems;
+export default GalleryList;
