@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 
 function App() {
   const [galleryItems, setGalleryItems] = useState([]);
-  
+
 
   useEffect(() => {
     console.log('useEffect page-load');
@@ -32,6 +32,19 @@ function App() {
       alert('Something went wrong!')
     });
   }
+
+  const likeImage = (galleryItem) => {
+    axios({
+      method: 'PUT',
+      url:`gallery/like/${galleryItem}`
+    }).then((response) => {
+      fetchGalleryImages()
+    }) .catch((error) => {
+        console.log(error);
+        alert('Something went wrong')
+    })
+  }
+  
       return (
           <div className="App">
             <header className="App-header">

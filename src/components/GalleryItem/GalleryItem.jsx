@@ -7,7 +7,8 @@ import Typography from '@mui/material/Typography';
 import {useState} from 'react'
 
 function GalleryItem({picture}) {  
-    const [toggle, setToggle] = useState(false);    
+    const [toggle, setToggle] = useState(false); 
+    const [galleryItem, likeImage] =useState(0)
     return <Grid item xs={6} key={picture.id}>
              <Card elevation={3}>
                 <CardContent>
@@ -24,7 +25,10 @@ function GalleryItem({picture}) {
                 {toggle ? 'View Description' : 'View Image'}  
                 </Button>
                         
-                <Button variant="contained" size="small">LIKE</Button>
+                <Button variant="contained" size="small" 
+                    onClick={() => likeImage(galleryItem)}>
+                    LIKE
+                </Button>
                 </CardContent>
              </Card>
              <Typography variant="body2">
