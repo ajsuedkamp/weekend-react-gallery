@@ -6,8 +6,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
-function GalleryList({picture}) {
-    return <GalleryItem picture={picture}/>
+function GalleryList({picture, likeImage}) {
+    return <GalleryItem picture={picture} likeImage={likeImage}/>
 }
 
 export default GalleryList;

@@ -6,9 +6,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {useState} from 'react'
 
-function GalleryItem({picture}) {  
+function GalleryItem({picture, likeImage}) {  
     const [toggle, setToggle] = useState(false); 
-    const [galleryItem, likeImage] =useState(0)
     return <Grid item xs={6} key={picture.id}>
              <Card elevation={3}>
                 <CardContent>
@@ -26,7 +25,7 @@ function GalleryItem({picture}) {
                 </Button>
                         
                 <Button variant="contained" size="small" 
-                    onClick={() => likeImage(galleryItem)}>
+                    onClick={() => likeImage(picture.id)}>
                     LIKE
                 </Button>
                 </CardContent>

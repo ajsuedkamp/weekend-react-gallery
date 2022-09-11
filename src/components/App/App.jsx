@@ -58,6 +58,7 @@ function App() {
                     return <GalleryList
                             key={picture.id} 
                             picture={picture}
+                            likeImage={likeImage}
                             />
                   })
                 }
